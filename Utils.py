@@ -13,16 +13,16 @@ def sequence_filter(sequences,seqlen=None,T=None):
             if len(line)>0:
                 reduced.append(line)
     return reduced
-  
-  
+
+
 def file2sequence(filename):
     sequences = []
     if os.path.isfile('data/{}.txt'.format(filename)):
-        f = open('data/{}.txt'.format(filename)) 
+        f = open('data/{}.txt'.format(filename))
     else:
-        print filename
+        print(filename)
         raise Exception("File doesn't exist.")
- 
+
     for line in f:
       line = line.strip()
       if line:
@@ -52,7 +52,7 @@ def lambda_estimation(sequences,num_dim,T):
     
     estimated_lambda/=(len(sequences)*T)
     return estimated_lambda
-  
+
 
 def dimension_extract(sequences,num_dim,T):
     estimated_lambda = []
