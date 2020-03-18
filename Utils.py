@@ -49,7 +49,7 @@ def lambda_estimation(sequences,num_dim,T):
     for seq in sequences:
         for item in seq:
           estimated_lambda[np.int16(item[1])]+=1
-    
+
     estimated_lambda/=(len(sequences)*T)
     return estimated_lambda
 
